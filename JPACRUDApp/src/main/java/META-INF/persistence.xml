@@ -8,14 +8,14 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     <!-- Entities -->
-<!--  <class>com.skilldistillery.jpavideostore.entities.NOSUCHCLASS!!!!!</class> -->
+<class>com.skilldistillery.jpavideostore.entities.Exercise</class> 
 
 
     <properties>
       <property name="javax.persistence.jdbc.url"
-        value="jdbc:mysql://localhost:3306/CHANGEMEORTHISWON'TWORK" />
-      <property name="javax.persistence.jdbc.CHANGEME" value="student"/>
-      <property name="javax.persistence.jdbc.password" value="CHANGEME" />
+        value="jdbc:mysql://localhost:3306/excercisedb" />
+      <property name="javax.persistence.jdbc.user" value="bunzosteel"/>
+      <property name="javax.persistence.jdbc.password" value="workit" />
       <property name="javax.persistence.jdbc.driver"
         value="com.mysql.jdbc.Driver" />
 
