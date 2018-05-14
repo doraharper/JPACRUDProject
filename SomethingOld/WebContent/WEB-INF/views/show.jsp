@@ -18,24 +18,24 @@
 				<input type="hidden" value="${exercise.id }" name="id">
 		
 				
-					<input label="Name" type="text" palceholder="Name" value="${exercise.name }" name="name">
-						<select>
-						  <option name="skill_level" value="BEGINNER">Beginner</option>
-						  <option name="skill_level" value="INTERMEDIATE">Intermediate</option>
-						  <option name="skill_level" value="EXPERT">Expert</option>
-						</select>	
-						<select>
-						  <option name="category" value="BODYWEIGHT">Bodyweight</option>
-						  <option name="category" value="WEIGHTS">Weights</option>
-						  <option name="category" value="YOGA">Yoga</option>
-						  <option name="category" value="FUN">Fun</option>
-						</select>	
-					<textarea  palceholder="Description" value="${exercise.description }" name="description"></textarea>
+					<input label="Name" type="text" palceholder="Name" value="${exercise.name }" name="name"><br>
+						<select name="skillLevel">
+						  <option value="BEGINNER">Beginner</option>
+						  <option value="INTERMEDIATE">Intermediate</option>
+						  <option value="EXPERT">Expert</option>
+						</select>	<br>
+						<select name="category">
+						  <option value="BODYWEIGHT">Bodyweight</option>
+						  <option value="WEIGHTS">Weights</option>
+						  <option value="YOGA">Yoga</option>
+						  <option value="FUN">Fun</option>
+						</select>	<br>
+					Description:<br><textarea  palceholder="Description" value="${exercise.description }" name="description"></textarea>
 				
 				
 		
 					
-						<input type="submit" value="UPDATE"><br>
+						<br><input type="submit" value="UPDATE"><br>
 				</form>
   
   <p>Delete This Exercise!</p>

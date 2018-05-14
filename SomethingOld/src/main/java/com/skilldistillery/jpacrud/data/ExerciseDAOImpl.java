@@ -41,7 +41,8 @@ public class ExerciseDAOImpl implements ExerciseDAO {
 		e.setCategory(exercise.getCategory());
 		e.setDescription(exercise.getDescription());
 		e.setLink(exercise.getLink());
-
+		em.persist(e);
+		em.flush();
 		return e;
 	}
 
