@@ -14,7 +14,7 @@
 
 	<bean id="myEntityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="VideoStore" />
+		<property name="persistenceUnitName" value="Exercise" />
 	</bean>
 
 	<bean id="myTransactionManager"

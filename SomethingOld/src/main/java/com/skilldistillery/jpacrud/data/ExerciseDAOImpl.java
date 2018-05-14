@@ -20,33 +20,57 @@ public class ExerciseDAOImpl implements ExerciseDAO {
 	@Override
 	public List<Exercise> retrieveAll() {
 		String query = "SELECT e FROM Exercise e";
-
-		List<Exercise> film = em.createQuery(query, Exercise.class).getResultList();
-		return film;
+		List<Exercise> exercises = em.createQuery(query, Exercise.class).getResultList();
+	
+		return exercises;
 	}
 
 	@Override
 	public Exercise create(Exercise exercise) {
-		// TODO Auto-generated method stub
-		return null;
+		Exercise e = new Exercise();
+		em.persist(e);
+		em.flush();
+		return e;
 	}
 
 	@Override
-	public Exercise update(int id, Exercise exercise) {
-		// TODO Auto-generated method stub
-		return null;
+	public Exercise update(Exercise exercise) {
+		Exercise e = em.find(Exercise.class, exercise.getId());
+		e.setName(exercise.getName());
+		e.setSkillLevel(exercise.getSkillLevel());
+		e.setCategory(exercise.getCategory());
+		e.setDescription(exercise.getDescription());
+		e.setLink(exercise.getLink());
+
+		return e;
 	}
 
 	@Override
 	public Exercise retrieveById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Exercise e = em.find(Exercise.class, id);
+		return e;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		Exercise e = em.find(Exercise.class, id);
+		if (e == null) {
+			em.getTransaction().commit();
+			return false;
+		}
+
+		em.remove(e);
+
+		return true;
 	}
 
+//	@Override
+//	public Exercise findByKeyword(String keyword) {	
+//		String query = "SELECT e FROM Exercise e WHERE e.name = keyword ";
+//		Exercise exercise = em.createQuery(query, Exercise.class)
+//				.setParameter("name", );
+//				.getResultList();
+//	
+//		return exercises;
+//	}
 }

@@ -2,6 +2,7 @@ package com.skilldistillery.jpacrud.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,11 +17,12 @@ public class Exercise {
 
 	private String name;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name = "skill_level")
 	private SkillLevel skillLevel;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
+	@Column(name="category")
 	private Category category;
 
 	private String description;
