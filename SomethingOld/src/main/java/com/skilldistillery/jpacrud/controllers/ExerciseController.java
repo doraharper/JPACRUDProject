@@ -38,27 +38,23 @@ public class ExerciseController {
 	}
 	
 	@RequestMapping(path = "update.do", method = RequestMethod.POST)
-	public ModelAndView getUpdate(Exercise exercise) {
+	public ModelAndView getUpdate(@RequestParam(name="id") int id, Exercise exercise) {
 		ModelAndView mv = new ModelAndView();
-		Exercise e = dao.update(exercise);
+		Exercise e = dao.update(exercise, id);
 		mv.addObject("exercise", e);
+		List<Exercise> exercises = dao.retrieveAll();
+		mv.addObject("exercise", exercises);
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}
-//	@RequestMapping(path = "findbyKeyword.do", method = RequestMethod.POST)
-//	public ModelAndView getExerciseByKeyword(@RequestParam(name="keyword") String keyword) {
-//		ModelAndView mv = new ModelAndView();
-//		Exercise e = dao.findByKeyword(keyword);
-//		mv.addObject("exercise", e);
-//		mv.setViewName("WEB-INF/views/index.jsp");
-//		return mv;
-//	}
+
 	
 	@RequestMapping(path = "deleteExercise.do", method = RequestMethod.POST)
 	public ModelAndView getDelete(int id) {
 		ModelAndView mv = new ModelAndView();
 		boolean e = dao.delete(id);
-		
+		List<Exercise> exercises = dao.retrieveAll();
+		mv.addObject("exercise", exercises);
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}

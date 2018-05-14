@@ -34,8 +34,8 @@ public class ExerciseDAOImpl implements ExerciseDAO {
 	}
 
 	@Override
-	public Exercise update(Exercise exercise) {
-		Exercise e = em.find(Exercise.class, exercise.getId());
+	public Exercise update(Exercise exercise, int id) {
+		Exercise e = em.find(Exercise.class, id);
 		e.setName(exercise.getName());
 		e.setSkillLevel(exercise.getSkillLevel());
 		e.setCategory(exercise.getCategory());
@@ -65,13 +65,4 @@ public class ExerciseDAOImpl implements ExerciseDAO {
 		return true;
 	}
 
-//	@Override
-//	public Exercise findByKeyword(String keyword) {	
-//		String query = "SELECT e FROM Exercise e WHERE e.name = keyword ";
-//		Exercise exercise = em.createQuery(query, Exercise.class)
-//				.setParameter("name", );
-//				.getResultList();
-//	
-//		return exercises;
-//	}
 }

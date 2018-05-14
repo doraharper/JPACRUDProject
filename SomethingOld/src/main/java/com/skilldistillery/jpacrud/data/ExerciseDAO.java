@@ -7,9 +7,8 @@ import com.skilldistillery.jpacrud.entities.Exercise;
 public interface ExerciseDAO {
 	public List<Exercise> retrieveAll();
 	public Exercise create(Exercise exercise);
-	public Exercise update(Exercise exercise);
+	public Exercise update(Exercise exercise, int id);
 	public Exercise retrieveById(int id);
-//	public Exercise findByKeyword(String keyword);
 	public boolean delete(int id);
 
 }
